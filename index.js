@@ -12,7 +12,7 @@ const myCache = new nodeCache({stdTTL: 0, checkperiod: 600})
 
 //middlewares para cache e public
 app.use(express.static('public', {
-    maxAge: 3600
+    maxAge: 10000
 }))
 app.use(express.static(path.join(__dirname + './public')))
 app.use((req, res, next)=>{
@@ -42,7 +42,17 @@ app.get('/api/scrape', async (req, res)=> { //rota para obter as informações d
         }
         const searchUrl = `https://www.amazon.com.br/s?k=${keyword}` //url da pesquisa da amazon onde passamos a palavra chave
 
-        const response = await axios.get(searchUrl) //obtendo url usando axios para facilitar
+        const configAxios = {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+                'Referer': 'https://www.amazon.com.br/',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+            }
+        }
+        const response = await axios.get(searchUrl, configAxios) //obtendo url usando axios para facilitar
         
         const $ = cheerio.load(response.data) //obtendo o conteúdo da página com cheerio
         const listProducts = []

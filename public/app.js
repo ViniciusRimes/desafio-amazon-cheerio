@@ -1,11 +1,13 @@
 
 const fetchData = async(keyword)=>{ //recebendo a palavra e buscando os produtos, logo em seguida retorna os produtos
+    const keywordUpperCase = keyword.toUpperCase()
     try{
-        const response = await fetch(`http://localhost:5000/api/scrape?keyword=${keyword}`, {
+        const response = await fetch(`http://localhost:5000/api/scrape?keyword=${keywordUpperCase}`, {
         headers: {
             'Accept': 'application/json'
         }})
         const data = await response.json() 
+        console.log(keywordUpperCase)
         return data
     }catch(error){
         console.log(error)
@@ -80,7 +82,7 @@ const renderResults = (products)=>{ //renderizando os produtos na div#searchResu
 
 //pegando o valor do input e chamando a função de busca
 const search = async ()=>{
-    const keyword = document.getElementById('searchInput').value
+    const keyword = document.getElementById('searchInput').value.toUpperCase()
     try{
         const data = await fetchData(keyword)
         renderResults(data.products)
