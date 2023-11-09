@@ -8,6 +8,10 @@ main{
     max-width: 1300px;
     font-family: 'Poppins';
 }
+.apresentationProject{
+    margin-bottom: 2em;
+    color: #FEBD68;
+}
 #searchKeyword{
     display: flex;
     width: 100%;
@@ -34,7 +38,6 @@ main{
 #searchButton:hover{
     background-color: #FF9900;
 }
-
 #searchResults{
     margin-top: 4em;
     display: flex;
@@ -48,7 +51,9 @@ main{
 }
 .numberElements{
     margin-bottom: 2em;
-    color: #FF9900
+    margin-left: 0.7em;
+    color: #FEBD68;
+    font-weight: bold;
 }
 .productCard{
     display: flex;
@@ -92,4 +97,30 @@ main{
 }
 .infos .qtyAvaliations{
     font-size: 1.3em;
+}
+@media (max-width: 680px){
+    #searchResults{
+        justify-content: center;
+        align-items: center;
+    }
+    .cardList{
+        justify-content: center;
+    }
+    .productCard{
+        padding: 1em;
+    }
+    .productCard:hover{
+        transform: scale(1.05);
+    }
+}
+@media (max-width: 1199px){
+    #searchKeyword{
+        width: 90%;
+    }
+    .cardList{
+        justify-content: space-around
+    }
+    .numberElements{
+        margin-left: 2em;
+    }
 }
