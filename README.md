@@ -1,6 +1,9 @@
 # README - Web Scraper Amazon
 
-Este é um projeto de **Web Scraper** para extrair informações de produtos da Amazon com base em uma palavra-chave fornecida. O projeto é construído usando Node.js e utiliza módulos como **Express**, **Axios**, **Cheerio**, e **Node-Cache** para melhorar o desempenho e o armazenamento em cache de resultados.
+Este é um projeto de **Web Scraper** para extrair informações de produtos da Amazon com base em uma palavra-chave fornecida. O projeto inclui o backend e o frontend, o backend é construído usando Node.js e utiliza módulos como **Express**, **Axios**, **Cheerio**, e **Node-Cache** para melhorar o desempenho e o armazenamento em cache de resultados. Já o frontend foi desenvolvido com HTML5, CSS3 e JavaScript
+
+![Texto Alternativo](https://github.com/ViniciusRimes/web-scraper-amazon/blob/main/public/images/projeto-web-scraper.png)
+
 
 ## Funcionalidades
 
