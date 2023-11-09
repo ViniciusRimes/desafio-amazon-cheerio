@@ -38,9 +38,17 @@ main{
 #searchResults{
     margin-top: 4em;
     display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+.cardList{
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    font-family: 'Poppins';
+}
+.numberElements{
+    margin-bottom: 2em;
+    color: #FF9900
 }
 .productCard{
     display: flex;
